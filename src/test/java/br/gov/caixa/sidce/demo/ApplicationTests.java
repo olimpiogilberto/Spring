@@ -1,10 +1,11 @@
-package br.com.olimpio.pontointeligente.api;
+package br.gov.caixa.sidce.demo;
+
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PontoInteligenteApplicationTests {
+class ApplicationTests {
 
 	@Test
 	void contextLoads() {
