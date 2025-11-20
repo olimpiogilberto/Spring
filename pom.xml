@@ -6,16 +6,14 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.5.3</version>
-		<relativePath/>
+		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.gov.caixa.SIDCE</groupId>
-	<artifactId>buscaNome</artifactId>
-	<version>1.0.0.0</version>
-	<name>buscaNome</name>
+	<groupId>br.gov.caixa.sidce</groupId>
+	<artifactId>demo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>demo</name>
 	<description>Demo project for Spring Boot</description>
-	<url>https://github.com/olimpiogilberto/Spring.git</url>
-
-	
+	<url/>
 	<licenses>
 		<license/>
 	</licenses>
@@ -32,44 +30,57 @@
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
-       <dependency>
-        	<groupId>org.springframework.boot</groupId>
-        	<artifactId>spring-boot-starter-batch</artifactId>
-    	</dependency>
-    	<dependency>
-        	<groupId>org.springframework.boot</groupId>
-        	<artifactId>spring-boot-starter-web</artifactId>
-    	</dependency>
-    	<dependency>
-    		<groupId>com.microsoft.sqlserver</groupId>
-    		<artifactId>mssql-jdbc</artifactId>
-    		<version>12.6.1.jre11</version><!--$NO-MVN-MAN-VER$--> <!-- ou versão compatível com seu JDK -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-batch</artifactId>
+    </dependency>
+
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		    <dependency>
+        <groupId>com.microsoft.sqlserver</groupId>
+        <artifactId>mssql-jdbc</artifactId>
+    </dependency>
+		    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-jdbc</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter</artifactId>
+    </dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
-    		<groupId>com.h2database</groupId>
-    		<artifactId>h2</artifactId>
-    		<scope>runtime</scope>
+			<groupId>org.springframework.batch</groupId>
+			<artifactId>spring-batch-test</artifactId>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
 	<build>
-        <plugins>
-            <!-- Plugin Spring Boot -->
+		<plugins>
 			<plugin>
- 	<groupId>org.springframework.boot</groupId>
- 	<artifactId>spring-boot-maven-plugin</artifactId>
- 	<configuration>
- <generateBuildInfo>true</generateBuildInfo>
- 	</configuration>
- 	</plugin>
-
-            <!-- Plugin de recursos (opcional, se quiser travar versão) -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>3.2.0</version><!--$NO-MVN-MAN-VER$--> <!-- Versão estável -->
-            </plugin>
-        </plugins>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.6.1</version><!--$NO-MVN-MAN-VER$-->
+				<configuration>
+				<source>1.8</source>
+				<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
 
 </project>
+
