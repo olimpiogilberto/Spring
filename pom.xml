@@ -13,7 +13,9 @@
 	<version>1.0.0.0</version>
 	<name>buscaNome</name>
 	<description>Demo project for Spring Boot</description>
-	<url/>
+	<url>https://github.com/olimpiogilberto/Spring.git</url>
+
+	
 	<licenses>
 		<license/>
 	</licenses>
@@ -53,10 +55,13 @@
 	<build>
         <plugins>
             <!-- Plugin Spring Boot -->
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
+			<plugin>
+ 	<groupId>org.springframework.boot</groupId>
+ 	<artifactId>spring-boot-maven-plugin</artifactId>
+ 	<configuration>
+ <generateBuildInfo>true</generateBuildInfo>
+ 	</configuration>
+ 	</plugin>
 
             <!-- Plugin de recursos (opcional, se quiser travar versão) -->
             <plugin>
