@@ -1,11 +1,10 @@
-package br.gov.caixa.sidce.demo;
-
+package br.com.giba.cadmembros;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ApplicationTests {
+class PrimeiroprojetospringApplicationTests {
 
 	@Test
 	void contextLoads() {
