@@ -19,22 +19,32 @@
 		<java.version>21</java.version>
 	</properties>
 	<dependencies>
+		<!-- *Spring Boot -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		 </dependency>
+
+		 <!--  Banco SQL Server -->
+		 <dependency>
+		 	<groupId>com.microsoft.sqlserver</groupId>        
+		 	<artifactId>mssql-jdbc</artifactId>
+		 </dependency>		 
+		 		 
+		 <!-- Para rodar JUnit 4 no Spring Boot -->
 		 <dependency>        
 		 	<groupId>org.springframework.boot</groupId>      
 		 	<artifactId>spring-boot-starter-test</artifactId>
 		 	<scope>test</scope>    
 		 </dependency>
-		 <dependency>
-		 	<groupId>com.microsoft.sqlserver</groupId>        
-		 	<artifactId>mssql-jdbc</artifactId>
-		 </dependency>
+		 
+		 <!-- Spring Data JPA -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
 	</dependencies>
-
-	<build>
+<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
