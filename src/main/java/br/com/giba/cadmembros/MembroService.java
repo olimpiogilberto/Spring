@@ -1,10 +1,10 @@
 package br.com.giba.cadmembros;
 
-public class MembroService {
-	private MembroRepository membroRepository;
-	
-	public MembroService(MembroRepository membroRepository) {
-		this.membroRepository = membroRepository;
-	}
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
+@Service
+@RequiredArgsConstructor
+public class MembroService {
+	private final MembroRepository membroRepository;
 }

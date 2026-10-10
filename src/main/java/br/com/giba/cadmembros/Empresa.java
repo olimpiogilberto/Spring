@@ -3,8 +3,16 @@ package br.com.giba.cadmembros;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import java.time.LocalDate;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Empresa {
 	
 	@Id
@@ -13,15 +21,4 @@ public class Empresa {
 	private String norazaosocial;
 	
 	private LocalDate dataCriacao;
-	
-	public Empresa() {
-		super();
-	}
-	
-	public Empresa(String cnpj, String norazaosocial, LocalDate dataCriacao) {
-		super();
-		this.cnpj = cnpj;
-		this.norazaosocial = norazaosocial;
-		this.dataCriacao = dataCriacao;
-	}
 }

@@ -2,7 +2,16 @@ package br.com.giba.cadmembros;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Pessoa {
 	@Id
 	private String cpf;
@@ -10,15 +19,4 @@ public class Pessoa {
 	private String nome;
 	
 	private Integer idade;
-	
-	public Pessoa() {
-		super();
-	}
-	
-	public Pessoa(String cpf, String nome, Integer idade) {
-		super();
-		this.cpf = cpf;
-		this.nome = nome;
-		this.idade = idade;
-	}
 }

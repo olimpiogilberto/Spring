@@ -6,7 +6,15 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.EnumType;
+import jakarta.persistence.Entity;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
 public class Membro {
 	
 	@Id
@@ -22,12 +30,7 @@ public class Membro {
 	@Enumerated(EnumType.STRING)
 	private Cargo cargo;
 	
-	public Membro() {
-		super();
-	}
-	
 	public Membro(Pessoa pessoa, Empresa empresa, Cargo cargo) {
-		super();
 		this.pessoa = pessoa;
 		this.empresa = empresa;
 		this.cargo = cargo;
