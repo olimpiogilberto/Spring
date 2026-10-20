@@ -1,172 +1,332 @@
-# Projeto de Estudo e Prática com Spring Boot
+# Gestão de Empresas e Trabalhadores
 
-## Descrição
+## Visão geral
 
-Este projeto nasceu com a intenção de unir teoria e prática em um processo de aprendizado do Spring Boot. A ideia central é estudar o conteúdo do projeto, num ritmo de aprendizado de cada semana, e ao mesmo tempo transformar os conhecimentos em um projeto real desenvolvido do início ao fim com Spring Boot.
+Este projeto é uma API REST desenvolvida em Java 17 com Spring Boot para gerir empresas, pessoas, vínculos empregatícios, endereços, salários e faturamento anual. A aplicação foi criada como um ambiente prático de estudo e desenvolvimento, com foco em consolidar conceitos de backend, JPA, validação, regras de negócio, testes e documentação de API.
 
-O objetivo principal não é atingir um resultado perfeito desde o início, mas manter a consistência. Em semanas em que o estudo for mais intenso, o projeto evolui mais rapidamente; em semanas em que houver menos tempo, ele continua progredindo em etapas menores, sem perder o foco. A meta é construir uma base sólida de conhecimento e, ao final, entregar uma aplicação funcional que represente a aplicação prática dos conceitos aprendidos.
+O sistema permite:
 
-## Descrição Completa do Projeto
+- cadastrar empresas com CNPJ, razão social e situação cadastral;
+- cadastrar pessoas com CPF, nome, data de nascimento e situação;
+- associar pessoas a empresas por meio de vínculos empregatícios;
+- registrar salário, cargo, data de início, status e endereço;
+- consultar empresa por CPF, salário por CPF, contagem de empregados e faturamento anual;
+- manter estrutura organizada em camadas com controllers, services, repositories, DTOs e exceptions;
+- disponibilizar documentação automática com Swagger/OpenAPI.
 
-Este projeto tem como objetivo principal servir como ambiente de aprendizado prático e realista para consolidar os conhecimentos adquiridos em Java 17, Maven 3.9.6 e Spring Boot, usando como base um problema de negócio concreto: o cadastro e a gestão de empresas e trabalhadores.
+## Objetivo do projeto
 
-A aplicação será uma solução backend para registrar empresas, pessoas, cargos, vínculos empregatícios, salários, endereços e faturamento anual. O foco é construir uma base sólida de desenvolvimento com regras de negócio claras, persistência em banco de dados, camada de serviço, controle de acesso a dados e organização de código.
+O objetivo principal é aprender fazendo. O projeto combina estudo teórico com prática real, seguindo uma evolução gradual de conceitos do Spring Boot e do desenvolvimento backend, sem perder o foco em uma solução funcional e bem estruturada.
 
-A ideia do sistema é permitir que o usuário cadastre uma empresa, registre seus dados cadastrais, identifique sua situação atual e associe pessoas a ela em diferentes papéis. Também será possível cadastrar uma pessoa, informar seu CPF, data de nascimento, status e, quando ela for um empregado, registrar salário, cargo, data de início do vínculo e tempo de atuação naquela função. O sistema também deve permitir relacionar esse empregado à empresa e identificar qual cargo ocupa e qual empresa faz parte.
+## Status atual
 
-Além disso, a aplicação deve cuidar de dados complementares importantes, como endereço da pessoa e endereço da empresa. A modelagem será pensada para que a mesma tabela de endereço possa servir tanto para pessoa quanto para empresa, diferenciando o tipo da entidade e o identificador da mesma. Também será possível registrar faturamento anual por empresa, com a finalidade de avaliar o desempenho do negócio em um período específico.
+O projeto já possui uma base funcional com os principais módulos implementados e testados:
 
-Em termos práticos, a aplicação será capaz de:
-
-- cadastrar uma empresa com CNPJ, razão social e situação atual;
-- cadastrar uma pessoa com CPF, nome, data de nascimento e status;
-- associar uma pessoa a uma empresa em um vínculo empregatício;
-- registrar cargo, salário e tempo de atuação;
-- consultar qual empresa uma pessoa trabalha;
-- consultar quantos empregados uma empresa possui;
-- consultar o salário de um empregado por CPF;
-- consultar o faturamento anual de uma empresa por CNPJ;
-- manter a consistência dos dados por meio de relações entre tabelas;
-- trabalhar com dados locais em H2, em uma primeira versão de desenvolvimento.
-
-O projeto será desenvolvido como um estudo guiado, com foco em aprender e praticar os principais conceitos de desenvolvimento backend com Java e Spring Boot. Em outras palavras, ele terá valor didático e técnico ao mesmo tempo: além de servir como base de aprendizagem, também será uma aplicação funcional com regras relevantes de negócio e estrutura organizada para evolução futura.
-
-## Artefatos esperados do projeto
-
-Ao longo do desenvolvimento, espera-se que o projeto tenha os seguintes artefatos:
-
-- Repositório GitHub para versionamento do projeto;
-- README com a descrição do sistema, objetivos, regras e modelagem inicial;
-- Estrutura Maven para gerenciamento das dependências do projeto;
-- Arquivo de configuração do Spring Boot com banco H2;
-- Estrutura de pacotes organizada em camadas, como model, repository, service, controller e dto;
-- Entidades JPA para representar empresa, pessoa, cargo, vínculo, endereço e faturamento;
-- Repositórios para acesso ao banco de dados;
-- Serviços para encapsular as regras de negócio;
-- Controladores REST para expor endpoints da aplicação;
-- DTOs para transportar dados entre camadas;
-- Scripts SQL ou modelagem inicial para a estrutura do banco H2;
-- Testes unitários e de integração para validar regras e endpoints;
-- Documentação da API, com exemplos de uso e contratos de entrada e saída;
-- Versionamento e commits organizados ao longo do processo de aprendizagem.
-
-A expectativa final é que o projeto seja um backend funcional, bem organizado, com regras de negócio claras e com potencial de crescimento. Ele servirá como marco de aprendizado para a construção de sistemas reais, preservando o objetivo principal do projeto: aprender fazendo, de forma prática, consistente e progressiva.
-
-## Visão Geral
-
-- Objetivo principal: aprender de forma prática e consistente usando Spring Boot como base de desenvolvimento.
-- Público-alvo: estudantes de programação e iniciantes que desejam aprender Java/Spring em um fluxo realista.
-- Diferencial: combinação de estudo teórico, prática gradual e desenvolvimento de um projeto completo.
-- Status do projeto: Em desenvolvimento
-
-## Ideia Conceitual do Projeto
-
-O projeto será uma aplicação backend com Spring Boot que pode evoluir ao longo das 12 semanas, cobrindo gradualmente os principais conceitos do livro e da tecnologia.
-
-A aplicação pode ser pensada como um sistema de gestão para um cenário real, por exemplo:
-
-- Cadastro de usuários
-- Login e autenticação
-- Gestão de produtos, tarefas, pedidos ou clientes
-- Persistência em banco de dados
-- Validações de regras de negócio
-- API REST para comunicação com o frontend ou outros serviços
-- Testes automatizados
-- Documentação da API
-
-Essa estrutura permite praticar desde os conceitos mais básicos até temas mais avançados como segurança, persistência, testes, arquitetura e boas práticas.
-
-## Objetivos do Projeto
-
-- Estudar e absorver os conceitos do livro de forma contínua.
-- Aplicar os conteúdos em um projeto funcional do zero.
-- Evoluir em etapas ao longo das 12 semanas.
-- Desenvolver um projeto completo usando Spring Boot.
-- Aprender a resolver problemas reais de desenvolvimento com lógica, organização e boas práticas.
-- Construir disciplina de estudo e consistência.
-
-## Funcionalidades Planejadas e Status
-
-- [x] Configuração inicial do projeto Spring Boot e estrutura em camadas
-- [x] Cadastro e consulta de empresas por identificador
-- [x] Cadastro e consulta de pessoas por identificador
-- [x] Cadastro e gestão de vínculo, cargo, salário e datas
-- [x] Cadastro e gestão de endereço para pessoa e empresa
-- [x] Consulta da empresa e do salário pelo CPF
-- [x] Contagem de vínculos ativos por empresa
-- [x] Cadastro e consulta de faturamento anual
-- [x] Persistência local com H2
-- [x] Validações de dados e regras de negócio principais
-- [x] API REST e tratamento padronizado de erros
-- [x] Testes de integração da API e da especificação OpenAPI
-- [x] Documentação interativa Swagger/OpenAPI
-- [ ] Listagem detalhada de pessoas/vínculos por empresa e paginação
-- [ ] Histórico de cargos e cálculo do tempo no cargo
-- [ ] Autenticação/autorização
-- [ ] Migrações versionadas e configuração de produção
+- [x] Estrutura inicial do Spring Boot
+- [x] Modelagem de empresas, pessoas, vínculos e faturamento
+- [x] Persistência com H2
+- [x] API REST com endpoints CRUD
+- [x] Validações de dados e regras de negócio
+- [x] Tratamento padronizado de erros
+- [x] Documentação OpenAPI/Swagger
+- [x] Testes de integração da API
+- [ ] Listagem detalhada de pessoas e vínculos por empresa
+- [ ] Histórico de cargos e cálculo de tempo no cargo
+- [ ] Autenticação e autorização
+- [ ] Migração versionada e configuração de produção
 - [ ] Deploy em ambiente simples
-
-## Regras do Sistema
-
-O sistema deve permitir o cadastro completo de empresas e membros, mantendo a relação entre eles e permitindo consultas por diferentes critérios.
-
-### Cadastro de empresa
-
-- Deve ser possível cadastrar uma empresa informando:
-  - CNPJ
-  - razão social
-  - situação atual da empresa (ativa ou inativa)
-
-### Cadastro de membro
-
-- Deve ser possível cadastrar uma pessoa informando:
-  - nome
-  - CPF
-  - data de nascimento
-  - situação do empregado na empresa
-- Quando a pessoa for cadastrada como empregado, ela pode ter:
-  - salário
-  - cargo
-  - tempo de exercício no cargo
-  - vínculo com uma empresa
-
-### Vínculo empregado-empresa
-
-- Um membro pode estar relacionado a uma empresa como empregado, diretor ou outro cargo definido.
-- A partir desse vínculo, o sistema deve permitir obter:
-  - o cargo ocupado
-  - o salário recebido
-  - há quanto tempo a pessoa exerce aquele cargo
-
-### Endereço
-
-- A pessoa pode ter um endereço.
-- A empresa também pode ter um endereço.
-- A tabela de endereços deve registrar o tipo do endereço para identificar se pertence a uma pessoa ou a uma empresa.
-
-### Consultas principais
-
-- Informar o CPF de um empregado e descobrir a empresa em que ele trabalha.
-- Informar o CNPJ de uma empresa e descobrir quantos empregados estão cadastrados nela.
-- Informar o CPF de um empregado e descobrir qual é o seu salário.
-- Informar o CNPJ da empresa e descobrir seu faturamento anual.
 
 ## Tecnologias
 
-- Linguagem: Java 17
-- Framework: Spring Boot
-- Banco de dados: H2 Database
-- Autenticação: ainda não implementada (evolução futura)
-- API: REST
-- Testes: JUnit, Mockito
-- Documentação: Swagger/OpenAPI
-- Ferramentas: Maven, Git, GitHub
+- Java 17
+- Spring Boot 3.5.3
+- Spring Web
+- Spring Data JPA
+- Spring Validation
+- H2 Database
+- Maven
+- JUnit 5
+- Mockito
+- SpringDoc OpenAPI / Swagger UI
 
-## Estrutura do Banco de Dados H2 (rascunho inicial)
+## Estrutura do projeto
 
-Abaixo está a proposta inicial da modelagem do banco em H2 para o sistema de cadastro de empresas, pessoas, vínculos empregatícios, salários e endereços. Esta estrutura ainda está em fase de idealização, então pode sofrer ajustes conforme o projeto evoluir.
+```text
+src/
+├── main/
+│   ├── java/br/com/giba/cadmembros/
+│   │   ├── config/
+│   │   ├── controller/
+│   │   ├── dto/
+│   │   ├── exception/
+│   │   ├── model/
+│   │   ├── repository/
+│   │   ├── service/
+│   │   ├── validation/
+│   │   └── ProjetoSpringApplication.java
+│   └── resources/
+│       └── application.properties
+└── test/
+    └── java/br/com/giba/cadmembros/
+        └── GestaoApiIntegrationTests.java
+```
 
-### 1. Tabela `empresa`
+## Requisitos
+
+Antes de executar o projeto, verifique se o ambiente atende aos itens abaixo:
+
+- Java 17
+- Maven 3.9.3 ou superior
+- Git
+- IDE opcional: IntelliJ IDEA, VS Code, Eclipse
+
+## Como executar
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/olimpiogilberto/Spring.git
+cd Spring
+```
+
+2. Rode a aplicação com Maven:
+
+No Linux/macOS:
+
+```bash
+./mvnw spring-boot:run
+```
+
+No Windows:
+
+```powershell
+mvnw.cmd spring-boot:run
+```
+
+3. A aplicação fica disponível em:
+
+```text
+http://localhost:8080
+```
+
+## Configuração da aplicação
+
+O arquivo principal de configuração está em:
+
+```text
+src/main/resources/application.properties
+```
+
+Conteúdo atual:
+
+```properties
+spring.application.name=gestao-empresas
+spring.datasource.url=jdbc:h2:mem:gestao;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+spring.datasource.driver-class-name=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.open-in-view=false
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2-console
+```
+
+### Banco de dados H2
+
+A aplicação usa H2 em memória para desenvolvimento local.
+
+- URL JDBC: `jdbc:h2:mem:gestao`
+- Usuário: `sa`
+- Senha: vazia
+- Console web: `http://localhost:8080/h2-console`
+
+## Documentação da API
+
+A API possui documentação automática com Swagger/OpenAPI.
+
+- OpenAPI JSON: `http://localhost:8080/v3/api-docs`
+- Swagger UI: `http://localhost:8080/swagger-ui/index.html`
+
+## Endpoints principais
+
+### Empresas
+
+Base: `/api/empresas`
+
+- `POST /api/empresas` — cadastra uma empresa
+- `GET /api/empresas` — lista empresas
+- `GET /api/empresas/{id}` — busca empresa por ID
+- `PUT /api/empresas/{id}` — atualiza empresa
+- `DELETE /api/empresas/{id}` — exclui empresa
+- `PUT /api/empresas/{id}/endereco` — atualiza endereço da empresa
+- `DELETE /api/empresas/{id}/endereco` — remove endereço da empresa
+
+### Pessoas
+
+Base: `/api/pessoas`
+
+- `POST /api/pessoas` — cadastra uma pessoa
+- `GET /api/pessoas` — lista pessoas
+- `GET /api/pessoas/{id}` — busca pessoa por ID
+- `PUT /api/pessoas/{id}` — atualiza pessoa
+- `DELETE /api/pessoas/{id}` — exclui pessoa
+- `PUT /api/pessoas/{id}/endereco` — atualiza endereço da pessoa
+- `DELETE /api/pessoas/{id}/endereco` — remove endereço da pessoa
+
+### Vínculos
+
+Base: `/api/vinculos`
+
+- `POST /api/vinculos` — cadastra vínculo
+- `GET /api/vinculos` — lista vínculos
+- `GET /api/vinculos/{id}` — busca vínculo por ID
+- `PUT /api/vinculos/{id}` — atualiza vínculo
+- `DELETE /api/vinculos/{id}` — exclui vínculo
+
+### Consultas
+
+Base: `/api/consultas`
+
+- `GET /api/consultas/empresa-por-cpf/{cpf}` — retorna a empresa do vínculo ativo da pessoa
+- `GET /api/consultas/empregados/{cnpj}/contagem` — conta empregados ativos por CNPJ
+- `GET /api/consultas/salario/{cpf}` — retorna salário do vínculo ativo da pessoa
+- `GET /api/consultas/faturamento/{cnpj}?ano={ano}` — retorna faturamento anual da empresa
+
+### Faturamento
+
+Base: `/api/empresas/{cnpj}/faturamentos`
+
+- `POST /api/empresas/{cnpj}/faturamentos` — cadastra faturamento anual
+- `GET /api/empresas/{cnpj}/faturamentos` — lista faturamentos da empresa
+- `PUT /api/empresas/{cnpj}/faturamentos/registro/{id}` — atualiza registro de faturamento
+- `DELETE /api/empresas/{cnpj}/faturamentos/registro/{id}` — remove registro de faturamento
+
+## Exemplos de payload
+
+### Empresa
+
+```json
+{
+  "cnpj": "11.222.333/0001-81",
+  "razaoSocial": "Acme Ltda",
+  "situacao": "ATIVA",
+  "endereco": {
+    "logradouro": "Rua Um",
+    "cidade": "São Paulo",
+    "estado": "SP",
+    "cep": "01000-000"
+  }
+}
+```
+
+### Pessoa
+
+```json
+{
+  "cpf": "529.982.247-25",
+  "nome": "Ana Souza",
+  "dataNascimento": "1990-01-02",
+  "situacao": "ATIVA"
+}
+```
+
+### Vínculo empregatício
+
+```json
+{
+  "pessoaId": 1,
+  "empresaId": 1,
+  "cargo": "EMPREGADO",
+  "salario": 5250.50,
+  "dataInicio": "2023-01-01",
+  "status": "ATIVO"
+}
+```
+
+### Faturamento anual
+
+```json
+{
+  "ano": 2025,
+  "valor": 1200000.00
+}
+```
+
+## Regras de negócio principais
+
+O sistema foi pensado para manter integridade entre as entidades e garantir consistência nas consultas.
+
+### Cadastro de empresa
+
+- CNPJ é obrigatório
+- CNPJ deve ser válido
+- CNPJ deve ser único
+- `RAZAO_SOCIAL` é obrigatório
+- `SITUACAO` deve estar em um valor válido, como `ATIVA` ou `INATIVA`
+
+### Cadastro de pessoa
+
+- CPF é obrigatório
+- CPF deve ser válido
+- CPF deve ser único
+- Nome é obrigatório
+- Data de nascimento pode ser informada
+- Situação da pessoa deve refletir o estado do registro ou do vínculo
+
+### Vínculo empregatício
+
+- Pessoa e empresa devem existir
+- O vínculo pode ter cargo, salário, status e data de início
+- A aplicação aceita consultas por pessoa ou empresa para obter dados do vínculo ativo
+
+### Endereço
+
+- Endereço pode ser associado a pessoa ou empresa
+- O mesmo modelo de entidade é reutilizado para representar o endereço em contextos diferentes
+
+### Consultas principais
+
+- consultar a empresa em que uma pessoa trabalha com base no CPF;
+- contar empregados ativos por empresa com base no CNPJ;
+- obter salário atual da pessoa pelo CPF;
+- consultar faturamento anual pela empresa e ano.
+
+## Validações e erros esperados
+
+A aplicação utiliza validações de entrada e trata erros com respostas HTTP apropriadas:
+
+- `400 Bad Request` — dados inválidos ou malformados
+- `404 Not Found` — recurso não encontrado
+- `409 Conflict` — conflito de dados, como CNPJ ou CPF duplicado
+
+Além disso, a aplicação usa validadores para CPF e CNPJ, garantindo maior consistência nas regras de negócio.
+
+## Testes
+
+Os testes de integração cobrem o fluxo principal da API, incluindo:
+
+- disponibilidade da documentação OpenAPI;
+- cadastro de empresa, pessoa e vínculo;
+- consultas por CPF e CNPJ;
+- faturamento anual;
+- validação de entradas inválidas;
+- tratamento de erros e cenários de ausência de recurso.
+
+Para executar os testes:
+
+```bash
+./mvnw test
+```
+
+No Windows:
+
+```powershell
+mvnw.cmd test
+```
+
+## Modelo de dados (rascunho inicial)
+
+A estrutura inicial da base foi pensada para esse domínio e pode evoluir conforme o projeto avança.
 
 ```sql
 CREATE TABLE empresa (
@@ -176,19 +336,7 @@ CREATE TABLE empresa (
     situacao VARCHAR(20) NOT NULL,
     data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-```
 
-Campos:
-
-- `id_empresa` — identificador da empresa
-- `cnpj` — CNPJ da empresa
-- `razao_social` — nome da empresa
-- `situacao` — situação cadastral, como `ATIVA`, `INATIVA`, `SUSPENSA`
-- `data_cadastro` — data em que a empresa foi cadastrada
-
-### 2. Tabela `pessoa`
-
-```sql
 CREATE TABLE pessoa (
     id_pessoa BIGINT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(150) NOT NULL,
@@ -197,36 +345,13 @@ CREATE TABLE pessoa (
     situacao VARCHAR(20) NOT NULL,
     data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-```
 
-Campos:
-
-- `id_pessoa` — identificador da pessoa
-- `nome` — nome completo
-- `cpf` — CPF da pessoa
-- `data_nascimento` — data de nascimento
-- `situacao` — situação da pessoa no sistema ou no vínculo com empresa
-- `data_cadastro` — data do cadastro
-
-### 3. Tabela `cargo`
-
-```sql
 CREATE TABLE cargo (
     id_cargo BIGINT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100) NOT NULL UNIQUE,
     descricao VARCHAR(255)
 );
-```
 
-Campos:
-
-- `id_cargo` — identificador do cargo
-- `nome` — nome do cargo, por exemplo: `EMPREGADO`, `DIRETOR`, `SUPERVISOR`
-- `descricao` — descrição do cargo
-
-### 4. Tabela `vinculo_emprego`
-
-```sql
 CREATE TABLE vinculo_emprego (
     id_vinculo BIGINT PRIMARY KEY AUTO_INCREMENT,
     id_pessoa BIGINT NOT NULL,
@@ -248,6 +373,22 @@ CREATE TABLE vinculo_emprego (
         FOREIGN KEY (id_cargo) REFERENCES cargo(id_cargo)
 );
 ```
+
+## Roadmap futuro
+
+- detalhamento de listagens e paginação;
+- histórico de cargos e cálculo de tempo no cargo;
+- autenticação e autorização;
+- migrações versionadas com Flyway/Liquibase;
+- configuração para produção;
+- deploy em ambiente simples e documentação operacional.
+
+## Observações finais
+
+Este projeto funciona como uma base sólida de aprendizado em Spring Boot, combinando teoria e prática em um caso realista de negócio. A arquitetura foi organizada para evoluir gradualmente, permitindo adicionar novos módulos, regras e integrações sem perder clareza e consistência.
+
+Se você está começando a estudar Spring Boot, este repositório é uma boa referência para entender como organizar uma API REST com persistência, regras de negócio, documentação e testes.
+
 
 Campos:
 
